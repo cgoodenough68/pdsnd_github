@@ -16,3 +16,6 @@ Expects the following csv files in a Data subfolder (not included in repo):
 ### Credits
 Code to retrieve name of day based on day number from DAYS dictionary was modified from a code snippet here: https://www.geeksforgeeks.org/python-get-key-from-value-in-dictionary/
 
+### Contact Info
+Information about this project can be found here:
+https://github.com/cgoodenough68/pdsnd_github
