@@ -73,15 +73,15 @@ def time_stats(df, city, month):
     print('\nCalculating The Most Frequent Times of Travel in unfiltered {} dataset...\n'.format(city))
 
     # display the most common month
-    print('The most common month of travel in {} is {} with {} rides'.format(city.title(),df['Month'].mode()[0],
+    print('\nThe most common month of travel in {} is {} with {} rides'.format(city.title(),df['Month'].mode()[0],
                                                             df[df['Month']==df['Month'].mode()[0]].count()['Start Time']))
     # display the most common day of week
     #modified solution from https://www.geeksforgeeks.org/python-get-key-from-value-in-dictionary/
-    print("The most popular day of travel is", list(DAYS.keys())
+    print("\nThe most popular day of travel is", list(DAYS.keys())
           [list(DAYS.values()).index(df['Day'].mode()[0])])
 
     # display the most common start hour
-    print('The most common hour of travel is {}'.format(df['Hour'].mode()[0]))
+    print('\nThe most common hour of travel is {}'.format(df['Hour'].mode()[0]))
 
     print('-'*40)
 
@@ -93,13 +93,13 @@ def station_stats(fdf,city, month,day):
           [list(DAYS.values()).index(fdf['Day'].mode()[0])]))
 
     # display most commonly used start station
-    print('The most common start station is {}.\n'.format(fdf['Start Station'].mode()[0]))
+    print('\nThe most common start station is {}.\n'.format(fdf['Start Station'].mode()[0]))
 
     # display most commonly used end station
-    print('The most common end station is {}\n.'.format(fdf['End Station'].mode()[0]))
+    print('\nThe most common end station is {}\n.'.format(fdf['End Station'].mode()[0]))
 
     # display most frequent combination of start station and end station trip
-    print('The most common trip is {}.'.format(fdf['Trip'].mode()[0]))
+    print('\nThe most common trip is {}.'.format(fdf['Trip'].mode()[0]))
 
     print('-'*40)
 
@@ -111,9 +111,9 @@ def trip_duration_stats(fdf, city, month, day):
           [list(DAYS.values()).index(fdf['Day'].mode()[0])]))
 
     # display total travel time
-    print('The total travel time is {}.'.format(fdf['Trip Duration'].sum()))
+    print('\nThe total travel time is {}.'.format(fdf['Trip Duration'].sum()))
     # display mean travel time
-    print('The total travel time is {}.'.format(fdf['Trip Duration'].mean()))
+    print('\nThe total travel time is {}.'.format(fdf['Trip Duration'].mean()))
 
     print('-'*40)
 
