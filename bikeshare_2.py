@@ -71,7 +71,6 @@ def time_stats(df, city, month):
     """Displays statistics on the most frequent times of travel for the unfiltered data set."""
 
     print('\nCalculating The Most Frequent Times of Travel in unfiltered {} dataset...\n'.format(city))
-    start_time = time.time()
 
     # display the most common month
     print('The most common month of travel in {} is {} with {} rides'.format(city.title(),df['Month'].mode()[0],
@@ -84,7 +83,6 @@ def time_stats(df, city, month):
     # display the most common start hour
     print('The most common hour of travel is {}'.format(df['Hour'].mode()[0]))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -93,7 +91,6 @@ def station_stats(fdf,city, month,day):
 
     print('\nCalculating The Most Popular Stations and Trip in {} in {} on {}...\n'.format(city, month, list(DAYS.keys())
           [list(DAYS.values()).index(fdf['Day'].mode()[0])]))
-    start_time = time.time()
 
     # display most commonly used start station
     print('The most common start station is {}.\n'.format(fdf['Start Station'].mode()[0]))
@@ -104,7 +101,6 @@ def station_stats(fdf,city, month,day):
     # display most frequent combination of start station and end station trip
     print('The most common trip is {}.'.format(fdf['Trip'].mode()[0]))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -113,14 +109,12 @@ def trip_duration_stats(fdf, city, month, day):
 
     print('\nCalculating Trip Duration in {} in {} on {}...\n'.format(city, month, list(DAYS.keys())
           [list(DAYS.values()).index(fdf['Day'].mode()[0])]))
-    start_time = time.time()
 
     # display total travel time
     print('The total travel time is {}.'.format(fdf['Trip Duration'].sum()))
     # display mean travel time
     print('The total travel time is {}.'.format(fdf['Trip Duration'].mean()))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -129,7 +123,6 @@ def user_stats(fdf, city, month, day):
 
     print('\nCalculating User Stats for {} in {} on {}...\n'.format(city, month, list(DAYS.keys())
           [list(DAYS.values()).index(fdf['Day'].mode()[0])]))
-    start_time = time.time()
 
     # Display counts of user types
     print("\nNumber of users in each user type:")
@@ -151,7 +144,6 @@ def user_stats(fdf, city, month, day):
     except:
         print('\nThis data does not contain birth year information.')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 def display_raw_data(df):
